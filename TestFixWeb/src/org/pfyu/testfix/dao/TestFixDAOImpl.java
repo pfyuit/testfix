@@ -88,6 +88,11 @@ public class TestFixDAOImpl implements TestFixDAO{
 		return results;
 	}
 	
+	/**
+	 * Test case
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		
