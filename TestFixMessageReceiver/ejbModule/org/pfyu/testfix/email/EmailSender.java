@@ -113,14 +113,10 @@ public class EmailSender {
 	}
 
 	public static void main(String[] args) {
-		// EmailInfo info = new EmailInfo("66953671@qq.com","pfyu@cn.ibm.com","Test Fix Scanning Report on "+new Date(),"<html><header/><body><b>helloworld</body></html>");
-		// EmailSender.getInstance().sendMail(info);
-
 		EmailInfo info = new EmailInfo(new File("C:\\TestFixData\\data.xml"));
 		info.setSubject(info.getSubject() + new Date());
 		info.setContent("<html><header/><body><b>helloworld</body></html>");
 		EmailSender.getInstance().sendMail(info);
-
 	}
 
 }
