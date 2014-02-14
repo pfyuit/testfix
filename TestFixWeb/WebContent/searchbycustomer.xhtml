@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="ui.xhtml">
+
+	<ui:define name="content">
+		<h:form id="form">
+			<div class="entry" style="align: center">
+				<p:panel header="Search By Customer">
+					<h:panelGrid columns="2">
+						<h:outputText value="Customer Name: "/>
+						<p:autoComplete id="customerName" value="#{searchByCustomer.customer}" completeMethod="#{searchByCustomer.complete}" size="70"/>
+						<h:outputText value="Created On: " />
+						<p:selectOneMenu value="#{searchByCustomer.createdOn}" style="width:380px">
+							<f:selectItem itemLabel="Rational Business Developer for All"
+								itemValue="all" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.2"
+								itemValue="7512" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.3"
+								itemValue="7513" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.4"
+								itemValue="7514" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.5"
+								itemValue="7515" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.6"
+								itemValue="7516" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.7"
+								itemValue="7517" />
+							<f:selectItem itemLabel="Rational Business Developer 7.5.1.8"
+								itemValue="7518" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0"
+								itemValue="80" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1"
+								itemValue="801" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1.1"
+								itemValue="8011" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1.2"
+								itemValue="8012" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1.3"
+								itemValue="8013" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1.4"
+								itemValue="8014" />
+							<f:selectItem itemLabel="Rational Business Developer 8.0.1.5"
+								itemValue="8015" />
+							<f:selectItem itemLabel="Rational Business Developer 8.5"
+								itemValue="85" />
+							<f:selectItem itemLabel="Rational Business Developer 8.5.1"
+								itemValue="851" />
+							<f:selectItem itemLabel="Rational Business Developer 8.5.1.1"
+								itemValue="8511" />
+							<f:selectItem itemLabel="Rational Business Developer 9.0"
+								itemValue="90" />
+							<f:selectItem itemLabel="Rational Business Developer 9.0.1"
+								itemValue="901" />
+						</p:selectOneMenu>
+						<p:commandButton value="Search" icon="ui-icon-search"
+							action="#{searchByCustomer.search}"></p:commandButton>
+					</h:panelGrid>
+				</p:panel>
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

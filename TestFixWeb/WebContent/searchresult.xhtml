@@ -1,0 +1,142 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="ui.xhtml">
+
+	<ui:define name="content">
+		<h:form id="form">
+			<div class="entry">
+				<p:dataTable id="dataTable" var="testfix"
+					value="#{searchResult.testFixDataModel}" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15,20,25,30" resizableColumns="true"	selection="#{searchResult.selectedFix}"
+					selectionMode="single">
+
+
+					<p:ajax event="rowSelect"
+						listener="#{searchResult.onRowSelect}"
+						update=":form:display" oncomplete="PF('fixDialog').show()" />
+					<p:ajax event="rowUnselect"
+						listener="#{searchResult.onRowUnselect}" />
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Test Fix Name" />
+						</f:facet>
+						<h:outputText value="#{testfix.testFixName}" />
+					</p:column>
+
+					<p:column style="width:80px">
+						<f:facet name="header">
+							<h:outputText value="APAR Name" />
+						</f:facet>
+						<h:outputText value="#{testfix.aparName}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Modified Files" />
+						</f:facet>
+						<h:outputText value="#{testfix.classNames}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Created On Releases" />
+						</f:facet>
+						<h:outputText value="#{testfix.createdOnReleases}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Created By Developer" />
+						</f:facet>
+						<h:outputText value="#{testfix.sendBy}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="PMR Number" />
+						</f:facet>
+						<h:outputText value="#{testfix.pmr}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Customer Name" />
+						</f:facet>
+						<h:outputText value="#{testfix.customer}" />
+					</p:column>
+
+					<p:column style="width:100px">
+						<f:facet name="header">
+							<h:outputText value="Description" />
+						</f:facet>
+						<h:outputText value="#{testfix.description}" />
+					</p:column>
+					<p:column style="width:80px">
+						<f:facet name="header">
+							<h:outputText value="Notes" />
+						</f:facet>
+						<h:outputText value="#{testfix.notes}" />
+					</p:column>
+				</p:dataTable>
+
+				<p:separator></p:separator>
+
+				<p:commandButton value="New Search" icon="ui-icon-search"
+					action="#{searchResult.returnToSearch}"></p:commandButton>
+			</div>
+			<p:dialog id="dialog" header="Fixtest Details" widgetVar="fixDialog"
+				resizable="true" showEffect="explode" hideEffect="explode">
+
+				<h:panelGrid id="display" columns="2" cellpadding="4">
+
+					<h:outputText value="Fixtest Name:" />
+					<h:outputText
+						value="#{searchResult.selectedFix.testFixName}"
+						style="font-weight:bold" />
+
+					<h:outputText value="APAR Name:" />
+					<h:outputText
+						value="#{searchResult.selectedFix.aparName}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Files:" />
+					<h:outputText
+						value="#{searchResult.selectedFix.classNames}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Created On:" />
+					<h:outputText
+						value="#{searchResult.selectedFix.createdOnReleases}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Created By:" />
+					<h:outputText value="#{searchResult.selectedFix.sendBy}"
+						style="font-weight:bold" />
+
+					<h:outputText value="PMR Number:" />
+					<h:outputText value="#{searchResult.selectedFix.pmr}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Customer:" />
+					<h:outputText
+						value="#{searchResult.selectedFix.customer}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Description" />
+					<h:outputText
+						value="#{searchResult.selectedFix.description}"
+						style="font-weight:bold" />
+
+					<h:outputText value="Notes:" />
+					<h:outputText value="#{searchResult.selectedFix.notes}"
+						style="font-weight:bold" />
+
+				</h:panelGrid>
+			</p:dialog>
+		</h:form>
+	</ui:define>
+</ui:composition>

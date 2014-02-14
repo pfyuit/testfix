@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<!-- Managed Bean -->
+	<managed-bean>
+		<managed-bean-name>index</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.Index</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>searchByCustomer</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.SearchByCustomer</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>searchByDeveloper</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.SearchByDeveloper</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>searchResult</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.SearchResult</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>searchByCustomerResult</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.SearchByCustomerResult</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>searchByDeveloperResult</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.SearchByDeveloperResult</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>guestPreferences</managed-bean-name>
+		<managed-bean-class>org.pfyu.testfix.page.GuestPreferences</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!-- Navigation Rule -->
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{index.search}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/searchresult.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>searchbycustomer.xhtml</display-name>
+		<from-view-id>/searchbycustomer.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{searchByCustomer.search}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/searchbycustomerresult.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>searchbydeveloper.xhtml</display-name>
+		<from-view-id>/searchbydeveloper.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{searchByDeveloper.search}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/searchbydeveloperresult.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>searchresult.xhtml</display-name>
+		<from-view-id>/searchresult.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{searchResult.returnToSearch}</from-action>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>searchbycustomerresult.xhtml</display-name>
+		<from-view-id>/searchbycustomerresult.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{searchByCustomerResult.returnToSearch}</from-action>
+			<from-outcome>searchbycustomer</from-outcome>
+			<to-view-id>/searchbycustomer.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>searchbydeveloperresult.xhtml</display-name>
+		<from-view-id>/searchbydeveloperresult.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{searchByDeveloperResult.returnToSearch}</from-action>
+			<from-outcome>searchbydeveloper</from-outcome>
+			<to-view-id>/searchbydeveloper.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

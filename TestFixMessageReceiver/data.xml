@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<email>
+	<authentication>
+		<username>66953671@qq.com</username>
+		<password>pfyu8309151020</password>
+	</authentication>
+	<information>
+		<from>66953671@qq.com</from>
+		<to>pfyu@cn.ibm.com</to>
+		<subject>Test Fix Scanning Report on </subject>
+		<content></content>
+	</information>
+	<property>
+		<host>smtp.qq.com</host>
+		<port>465</port>
+		<auth>true</auth>
+		<ssl>true</ssl>
+	</property>
+</email>

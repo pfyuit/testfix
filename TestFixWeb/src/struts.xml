@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="admin" class="org.pfyu.testfix.web.actions.AdminAction">
+			<result>/admin.jsp</result>
+		</action>
+
+		<action name="downloader" class="org.pfyu.testfix.web.actions.DownloaderAction">
+			<result>/downloader.jsp</result>
+		</action>
+
+		<action name="scanner" class="org.pfyu.testfix.web.actions.ScannerAction">
+			<result>/scanner.jsp</result>
+		</action>
+
+		<action name="startdownloader" class="org.pfyu.testfix.web.actions.DownloaderAction"
+			method="startDownloader">
+			<result>/downloader.jsp</result>
+		</action>
+
+		<action name="downloadnow" class="org.pfyu.testfix.web.actions.DownloaderAction"
+			method="downloadNow">
+			<result>/scanner.jsp</result>
+		</action>
+
+		<action name="stopdownloader" class="org.pfyu.testfix.web.actions.DownloaderAction"
+			method="stopDownloader">
+			<result>/downloader.jsp</result>
+		</action>
+
+		<action name="startscanner" class="org.pfyu.testfix.web.actions.ScannerAction"
+			method="startScanner">
+			<result>/scanner.jsp</result>
+		</action>
+
+		<action name="scannow" class="org.pfyu.testfix.web.actions.ScannerAction"
+			method="scanNow">
+			<result>/scanner.jsp</result>
+		</action>
+
+		<action name="stopscanner" class="org.pfyu.testfix.web.actions.ScannerAction"
+			method="stopScanner">
+			<result>/scanner.jsp</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13866539004931" configfile="/TestFixWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf13866543894692" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf13866543894693" inlinks="pf13873462741710" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="searchresult.xhtml" x="122" y="178" id="pf13866543894704" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13873462741710" inlinks="pf13866543894693" path="/searchresult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="searchbycustomer.xhtml" x="338" y="562" id="pf13908767241140" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf13908767241141" inlinks="pf13908767241142" path="/searchbycustomer.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="searchbycustomerresult.xhtml" x="122" y="562" id="pf13908767241143" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf13908767241142" inlinks="pf13908767241141" path="/searchbycustomerresult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="searchbydeveloper.xhtml" x="338" y="946" id="pf13908840457374" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf13908840457375" inlinks="pf13908840457376" path="/searchbydeveloper.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="searchbydeveloperresult.xhtml" x="122" y="946" id="pf13908840457377" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf13908840457376" inlinks="pf13908840457375" path="/searchbydeveloperresult.xhtml"/>
+  <links id="pf13866543894693" target="pf13866543894704" source="pf13866543894692" outcome="success" fromaction="#{index.search}"/>
+  <links id="pf13873462741710" target="pf13866543894692" source="pf13866543894704" outcome="index" fromaction="#{searchResult.returnToSearch}"/>
+  <links id="pf13908767241141" target="pf13908767241143" source="pf13908767241140" outcome="success" fromaction="#{searchByCustomer.search}"/>
+  <links id="pf13908767241142" target="pf13908767241140" source="pf13908767241143" outcome="searchbycustomer" fromaction="#{searchByCustomerResult.returnToSearch}"/>
+  <links id="pf13908840457375" target="pf13908840457377" source="pf13908840457374" outcome="success" fromaction="#{searchByDeveloper.search}"/>
+  <links id="pf13908840457376" target="pf13908840457374" source="pf13908840457377" outcome="searchbydeveloper" fromaction="#{searchByDeveloperResult.returnToSearch}"/>
+</pageflow:Pageflow>
