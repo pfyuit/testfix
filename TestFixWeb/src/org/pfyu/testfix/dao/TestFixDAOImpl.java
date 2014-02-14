@@ -89,7 +89,7 @@ public class TestFixDAOImpl implements TestFixDAO{
 	}
 	
 	/**
-	 * Test case5
+	 * Test case
 	 * @param args
 	 * @throws Exception
 	 */
