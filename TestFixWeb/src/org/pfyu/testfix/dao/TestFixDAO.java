@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.pfyu.testfix.data.entity.Testfix;
-
+//
 public interface TestFixDAO {
 
 	public abstract String createTestfix(Testfix Testfix) throws Exception;
