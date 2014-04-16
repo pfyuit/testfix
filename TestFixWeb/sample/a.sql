@@ -3,5 +3,6 @@ create table User(
   notes varchar(100) null,
   age int not null,
   sex char(1) not null,
-  address varchar(500)
+  address varchar(500),
+  phone varchar(50)
 )
