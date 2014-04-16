@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class TestFixDAOImpl implements TestFixDAO{
 	
+	public static final String STATUS = "hello";
+	
 	protected static final class NamedQueries {
 		protected static final String getTestfixes = "SELECT c FROM Testfix c";
 	}
